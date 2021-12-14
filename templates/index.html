@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="py-5 text-center">
+    
+    <h2>AFFAIR PREDICTION MACHINE LEARNING APP</h2>
+    <p class="lead"> Rate Marriage: woman's rating of her marriage (1 = very poor, 5 =
+      very good)<br>
+   
+      Age: woman's age<br>
+   
+      Years Married: number of years married<br>
+   
+     Children: number of children<br>
+   
+     Religious: woman's rating of how religious she is (1 = not religious, 4     =strongly religious)<br>
+   
+     Education: level of education (9 = grade school, 12 = high school, 14 =
+     some college, 16 = college graduate, 17 = some graduate school, 20
+     = advanced degree)<br>
+   
+   
+   Occupation: woman's occupation (1 = student, 2 = farming/semi-
+   skilled/unskilled, 3 = "white collar", 4 =     teacher/nurse/writer/technician/skilled, 5 = managerial/business, 6 =
+   professional with advanced degree)<br>
+   
+   Husband Occupation: husband's occupation (same as above)</p>
+  </div>
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border rounded-3 bg-light" action="/predict" method="POST">
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Rate Marriage</label>
+            <select class="form-control mr-sm-2" name="rate_marriage" id="rate_marriage" step="any" required>
+              <option value="1.">1.</option>
+              <option value="2.">2.</option>
+              <option value="3.">3.</option>
+              <option value="4.">4.</option>
+              <option value="5.">5.</option>
+            </select> 
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Age</label>
+            <input type="number" class="form-control" id="age" name="age" step="any" required>
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Years Married</label>
+            <input type="number" class="form-control" id="yrs_married" name="yrs_married" step="any" required>
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Children</label>
+            <input type="number" class="form-control" id="children" name="children" step="any" required>
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Religious</label>
+            <select class="form-control mr-sm-2" name="religious" id="religious" step="any" required>
+              <option value="1.">1.</option>
+              <option value="2.">2.</option>
+              <option value="3.">3.</option>
+              <option value="4.">4.</option>
+            </select> 
+          </div>
+
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Education</label>
+            <select class="form-control mr-sm-2" name="educ" id="educ" step="any" required>
+              <option value="9.">9.</option>
+              <option value="12.">12.</option>
+              <option value="14.">14.</option>
+              <option value="16.">16.</option>
+              <option value="17.">17.</option>
+              <option value="20.">20.</option>
+            </select> 
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Occupation</label>
+            <select class="form-control mr-sm-2" name="occupation" id="occupation" step="any" required>
+              <option value="1.">1.</option>
+              <option value="2.">2.</option>
+              <option value="3.">3.</option>
+              <option value="4.">4.</option>
+              <option value="5.">5.</option>
+              <option value="6.">6.</option>
+            </select> 
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Husband Occupation</label>
+            <select class="form-control mr-sm-2" name="occupation_husb" id="occupation_husb" step="any" required>
+              <option value="1.">1.</option>
+              <option value="2.">2.</option>
+              <option value="3.">3.</option>
+              <option value="4.">4.</option>
+              <option value="5.">5.</option>
+              <option value="6.">6.</option>
+            </select> 
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">PREDICT</button>
+          <hr class="my-4">
+          <small class="text-muted"><div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="mailto:peshimam.afrin@gmail.com">AFRIN PESHIMAM</a>
+          </div></small>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
